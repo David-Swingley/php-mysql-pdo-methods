@@ -48,7 +48,8 @@ $row->zip;
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>Edit</th>
+                                    <th>ID</th>                                    
                                     <th>FullName</th>
                                     <th>Email</th>
                                     <th>Phone</th>
@@ -69,6 +70,7 @@ $row->zip;
                                         {
                                             ?>
                                             <tr>
+                                             <td><a href="edit-data.php?id=<?= $row->id; ?>" title="Edit <?= $row->fullname; ?>">Edit</a></td>
                                                 <td><?= $row->id; ?></td>
                                                 <td><?= $row->fullname; ?></td>
                                                 <td><?= $row->email; ?></td>
