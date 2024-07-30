@@ -30,11 +30,11 @@
                             $data = [':id' => $contactId];
                             $statement->execute($data);
                             $result = $statement->fetch(PDO::FETCH_OBJ);
-                        }
+                        }                        
                         ?>
-                        <form action="code.php" method="POST">
+                        <form action="processData.php" method="POST">
 
-                            <input type="hidden" name="contactId" value="<?php  $result->id ?>" />
+                            <input type="hidden" name="contactId" value="<?=  $result->id; ?>" />
 
                             <div class="mb-3">
                                 <label>Full Name</label>
@@ -49,7 +49,7 @@
                                 <input type="text" name="phone" value="<?= $result->phone; ?>" class="form-control" />
                             </div>
                             <div class="mb-3">
-                                <label>Course</label>
+                                <label>Zipcode</label>
                                 <input type="text" name="zip" value="<?= $result->zip; ?>" class="form-control" />
                             </div>
                             <div class="mb-3">
