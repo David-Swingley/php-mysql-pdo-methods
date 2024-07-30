@@ -54,6 +54,7 @@ $row->zip;
                                     <th>Email</th>
                                     <th>Phone</th>
                                     <th>Zipcode</th>
+                                     <th><a class="btn btn-primary btn-sm" href="add-data.php" role="button">Add Contact</a></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -76,6 +77,7 @@ $row->zip;
                                                 <td><?= $row->email; ?></td>
                                                 <td><?= $row->phone; ?></td>
                                                 <td><?= $row->zip; ?></td>
+                                                <td><form action="processData.php" method="POST"><button type="submit" name="delete_contact" value="<?=$row->id;?>" class="btn btn-danger">Delete</button></form></td>
                                             </tr>
                                             <?php
                                         }
