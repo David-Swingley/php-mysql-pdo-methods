@@ -3,7 +3,7 @@ session_start();
 include('dbcon.php');
 
 
-
+//Add / Save Contact
 if(isset($_POST['save_contact_btn']))
 {
     $fullname = $_POST['fullname'];
@@ -36,15 +36,7 @@ if(isset($_POST['save_contact_btn']))
     }
 }
 
-
-
-
-
-
-
-
-
-
+//Update Contact
 if(isset($_POST['update_contact']))
 {
     $contactId = $_POST['contactId'];
@@ -63,8 +55,8 @@ if(isset($_POST['update_contact']))
             ':email' => $email,
             ':phone' => $phone,
             ':zip' => $zip,
-            //':id' => $contactId
-             ':id' => 1
+            ':id' => $contactId
+            // ':id' => 1
         ];
         $query_execute = $statement->execute($data);
 
@@ -89,9 +81,7 @@ if(isset($_POST['update_contact']))
     }
 }
 
-
-
-
+//Delete Contact 
 if(isset($_POST['delete_contact']))
 {
     $contactId = $_POST['delete_contact'];

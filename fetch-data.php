@@ -42,19 +42,22 @@ $row->zip;
             <div class="col-md-12 mt-4">
                 <div class="card">
                     <div class="card-header">
-                        <h3>PHP MySQL PDO Fetch Data</h3>
+                        <h3>PHP MySQL PDO Fetch Data & Using BindParam Function</h3>
+                        <p>Two Different PHP Methods With MySQL</p>
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>Edit</th>
+                                    <th>Edit Using BindParam</th>
                                     <th>ID</th>                                    
                                     <th>FullName</th>
                                     <th>Email</th>
                                     <th>Phone</th>
                                     <th>Zipcode</th>
                                      <th><a class="btn btn-primary btn-sm" href="add-data.php" role="button">Add Contact</a></th>
+                                     <th><a class="btn btn-primary btn-sm" href="add-using-bindParam.php" role="button">Add Contact Using BinbParam</a></th>                                     
                                 </tr>
                             </thead>
                             <tbody>
@@ -71,14 +74,17 @@ $row->zip;
                                         {
                                             ?>
                                             <tr>
-                                             <td><a href="edit-data.php?id=<?= $row->id; ?>" title="Edit <?= $row->fullname; ?>">Edit</a></td>
+                                                <td><a href="edit-data.php?id=<?= $row->id; ?>" title="Edit <?= $row->fullname; ?>">Edit</a></td>
+                                                <td><a href="edit-using-bindParam.php?id=<?=$row->id;?>" class="btn btn-info">Edit Using bindParam</a></td>
                                                 <td><?= $row->id; ?></td>
                                                 <td><?= $row->fullname; ?></td>
                                                 <td><?= $row->email; ?></td>
                                                 <td><?= $row->phone; ?></td>
                                                 <td><?= $row->zip; ?></td>
                                                 <td><form action="processData.php" method="POST"><button type="submit" name="delete_contact" value="<?=$row->id;?>" class="btn btn-danger">Delete</button></form></td>
-                                            </tr>
+                                                <td><form action="processUsingBindParam.php" method="POST"><button type="submit" name="delete_contact" value="<?=$row->id;?>" class="btn btn-danger">Delete Using bindParam</button></form></td>
+                                            
+                                                </tr>
                                             <?php
                                         }
                                     }
